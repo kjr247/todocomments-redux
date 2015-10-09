@@ -1,7 +1,7 @@
 import { ADD_COMMENT } from '../constants/ActionTypes';
 
 const initialState = [{
-  text: 'I am going to buy Atomics!!',
+  text: "I don't think that is the wisest use of your moneycointhings.jpg!!",
   id: 0
 }];
 
