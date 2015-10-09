@@ -9,6 +9,7 @@ const initialState = [{
 export default function todos(state = initialState, action) {
   switch (action.type) {
   case ADD_TODO:
+  debugger;    
     return [{
       id: (state.length === 0) ? 0 : state[0].id + 1,
       marked: false,

@@ -22,7 +22,8 @@ class TodoApp extends Component {
 
 function mapState(state) {
   return {
-    todos: state.todos
+    todos: state.todos,
+    comments: state.comments
   };
 }
 

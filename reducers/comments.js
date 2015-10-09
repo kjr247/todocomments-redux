@@ -6,8 +6,9 @@ const initialState = [{
 }];
 
 export default function comments(state = initialState, action){
-  switch(action.types){
+  switch(action.type){
   case ADD_COMMENT:
+    debugger;
     return [{
       id: (state.length === 0) ? 0 : state[0].id + 1,
       text: action.text
