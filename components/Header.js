@@ -8,7 +8,6 @@ export default class Header extends Component {
 
   handleSave(text) {
     if (text.length !== 0) {
-      debugger;
       this.props.addTodo(text);
     }
   }

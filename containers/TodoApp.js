@@ -10,7 +10,7 @@ import * as CommentActions from '../actions/CommentActions';
 class TodoApp extends Component {
   render() {
     const { todos, actions, comments } = this.props;
-    console.log(comments);
+    console.log("comments: ", comments);
     return (
       <div>
         <Header addTodo={actions.addTodo} />
@@ -21,7 +21,7 @@ class TodoApp extends Component {
 }
 
 function mapState(state) {
-  
+
   return {
     todos: state.todos,
     comments: state.comments

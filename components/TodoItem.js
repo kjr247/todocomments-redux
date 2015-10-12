@@ -61,7 +61,7 @@ export default class TodoItem extends Component {
         completed: todo.marked,
         editing: this.state.editing
       })}>
-        {element}                
+        {element}
       </li>
     );
   }

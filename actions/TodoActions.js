@@ -1,7 +1,6 @@
 import * as types from '../constants/ActionTypes';
 
 export function addTodo(text) {
-  debugger;
   return {
     type: types.ADD_TODO,
     text

@@ -3,17 +3,24 @@ import { ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, MARK_ALL, CLEAR_MARKED } f
 const initialState = [{
   text: 'I am going to buy Atomics',
   marked: false,
-  id: 0
+  id: 0,
+  comments: [{
+    id: 0,
+    text: "no text"
+  }]
 }];
 
 export default function todos(state = initialState, action) {
   switch (action.type) {
   case ADD_TODO:
-  debugger;    
     return [{
       id: (state.length === 0) ? 0 : state[0].id + 1,
       marked: false,
-      text: action.text
+      text: action.text,
+      comments: [{
+        id: (state.length === 0) ? 0 : state[0].id + 1,
+        text: "no text"
+      }]
     }, ...state];
 
   case DELETE_TODO:

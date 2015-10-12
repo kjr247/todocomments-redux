@@ -4,7 +4,6 @@ import TodoTextInput from './TodoTextInput';
 
 
 export default class CommentItem extends Component {
-  debugger;
   static propTypes = {
     comment: PropTypes.object.isRequired,
   };
