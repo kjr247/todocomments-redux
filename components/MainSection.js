@@ -43,13 +43,13 @@ export default class MainSection extends Component {
     const { todos, comments, actions } = this.props;
     const { filter } = this.state;
 
+
+
     const filteredTodos = todos.filter(TODO_FILTERS[filter]);
     const markedCount = todos.reduce((count, todo) =>
       todo.marked ? count + 1 : count,
       0
     );
-
-
 
     return (
       <section className='main'>
@@ -61,7 +61,9 @@ export default class MainSection extends Component {
           <TodoTextInput newTodo={true}
                          onSave={::this.handleSave}
                          placeholder='You got something to say about it?!' />
-
+          {comments.map(comment =>
+            <CommentItem key={comment.id} comment={comment} {...actions}/>
+          )}
         </ul>
         {this.renderFooter(markedCount)}
       </section>
