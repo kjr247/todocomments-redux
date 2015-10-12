@@ -9,18 +9,19 @@ import * as CommentActions from '../actions/CommentActions';
 
 class TodoApp extends Component {
   render() {
-    const { todos, actions } = this.props;
-    console.log(actions);
+    const { todos, actions, comments } = this.props;
+    console.log(comments);
     return (
       <div>
         <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
+        <MainSection todos={todos} actions={actions} comments={comments} />
       </div>
     );
   }
 }
 
 function mapState(state) {
+  
   return {
     todos: state.todos,
     comments: state.comments

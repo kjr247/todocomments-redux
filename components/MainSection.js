@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import TodoItem from './TodoItem';
+import CommentItem from './CommentItem';
 import Footer from './Footer';
 import TodoTextInput from './TodoTextInput';
 import { SHOW_ALL, SHOW_MARKED, SHOW_UNMARKED } from '../constants/TodoFilters';
@@ -39,7 +40,7 @@ export default class MainSection extends Component {
   }
 
   render() {
-    const { todos, actions } = this.props;
+    const { todos, comments, actions } = this.props;
     const { filter } = this.state;
 
     const filteredTodos = todos.filter(TODO_FILTERS[filter]);
@@ -47,6 +48,8 @@ export default class MainSection extends Component {
       todo.marked ? count + 1 : count,
       0
     );
+
+
 
     return (
       <section className='main'>
@@ -58,6 +61,7 @@ export default class MainSection extends Component {
           <TodoTextInput newTodo={true}
                          onSave={::this.handleSave}
                          placeholder='You got something to say about it?!' />
+
         </ul>
         {this.renderFooter(markedCount)}
       </section>

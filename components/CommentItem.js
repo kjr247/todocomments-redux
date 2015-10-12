@@ -4,22 +4,24 @@ import TodoTextInput from './TodoTextInput';
 
 
 export default class CommentItem extends Component {
+  debugger;
+  static propTypes = {
+    comment: PropTypes.object.isRequired,
+  };
+  render(){
+      const { comment } = this.props;
+      let element = (
+        <div className='view'>
+          <label >
+            {comment}
+          </label>
+        </div>
+      );
 
-render(){
-  const { comment } = this.props;
-  element = (
-    <div className='view'>
-      <input checked={todo.marked}
-             onChange={() => markTodo(todo.id)} />
-      <label >
-        {comment.text}
-      </label>
-    </div>
-  );
-
-  return (
-    <li>
-      {element}
-    </li>
-  );
+    return (
+      <li>
+        {element}
+      </li>
+    );
+  }
 }
