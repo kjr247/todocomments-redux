@@ -12,7 +12,7 @@ export default function comments(state = initialState, action){
       id: (state.length === 0) ? 0 : state[0].id + 1,
       text: action.text
     }, ...state];
-    
+
 
   default:
     return state;

@@ -5,8 +5,7 @@ const initialState = [{
   marked: false,
   id: 0,
   comments: [{
-    id: 0,
-    text: "no text"
+
   }]
 }];
 
@@ -26,10 +25,10 @@ export default function todos(state = initialState, action) {
   case ADD_COMMENT:
     return [{
       comments: [{
-        id: state[0].comments[0].id,
-        text: state[0].comments[0].text
+        id: state[0].comments.id,
+        text: action.text
       }]
-    }]
+    }, ...state];
 
   case DELETE_TODO:
     return state.filter(todo =>

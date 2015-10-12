@@ -32,6 +32,7 @@ export default class TodoItem extends Component {
     });
   }
 
+
   render() {
     const {todo, markTodo, deleteTodo} = this.props;
 
@@ -49,7 +50,7 @@ export default class TodoItem extends Component {
                  type='checkbox'
                  checked={todo.marked}
                  onChange={() => markTodo(todo.id)} />
-          <label onDoubleClick={::this.handleDoubleClick}>
+          <label className='abra' onDoubleClick={::this.handleDoubleClick}>
             {todo.text}
           </label>
           <button className='destroy'
@@ -62,7 +63,7 @@ export default class TodoItem extends Component {
       <li className={classnames({
         completed: todo.marked,
         editing: this.state.editing
-      })}>
+        })}>
         {element}
       </li>
     );
