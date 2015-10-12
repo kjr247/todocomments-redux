@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, MARK_ALL, CLEAR_MARKED } from '../constants/ActionTypes';
+import {  ADD_COMMENT, ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, MARK_ALL, CLEAR_MARKED } from '../constants/ActionTypes';
 
 const initialState = [{
   text: 'I am going to buy Atomics',
@@ -22,6 +22,14 @@ export default function todos(state = initialState, action) {
         text: "no text"
       }]
     }, ...state];
+
+  case ADD_COMMENT:
+    return [{
+      comments: [{
+        id: state[0].comments[0].id,
+        text: state[0].comments[0].text
+      }]
+    }]
 
   case DELETE_TODO:
     return state.filter(todo =>

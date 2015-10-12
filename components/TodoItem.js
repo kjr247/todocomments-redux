@@ -27,7 +27,9 @@ export default class TodoItem extends Component {
     } else {
       this.props.editTodo(id, text);
     }
-    this.setState({ editing: false });
+    this.setState({
+      editing: false
+    });
   }
 
   render() {

@@ -7,6 +7,14 @@ export function addTodo(text) {
   };
 }
 
+export function addComment(text){
+  return {
+    type: types.ADD_COMMENT,
+    text,
+    id
+  };
+}
+
 
 export function deleteTodo(id) {
   return {
